@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 2</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <style>
+        .item {
+            font-weight: 500;
+        }
+
+        .item:not(:last-child) {
+            margin-bottom: 8px;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="index.html">Go back</a></p>
+
+    <ul id="ingredients"></ul>
+
+    <script>
+        // Matricea cu ingrediente
+        const ingredients = [
+            "Potatoes",
+            "Mushrooms",
+            "Garlic",
+            "Tomatos",
+            "Herbs",
+            "Condiments",
+        ];
+
+        // Obținem lista de ingrediente
+        const ingredientsList = document.getElementById('ingredients');
+
+        // Iterăm prin fiecare ingredient din matrice
+        ingredients.forEach(ingredient => {
+            // Cream un element <li> pentru ingredient
+            const li = document.createElement('li');
+            // Adăugăm numele ingredientului ca text al elementului <li>
+            li.textContent = ingredient;
+            // Adăugăm clasa 'item' la elementul <li>
+            li.classList.add('item');
+            // Inserăm elementul <li> în lista de ingrediente
+            ingredientsList.appendChild(li);
+        });
+    </script>
+</body>
+
+</html>
