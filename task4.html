@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 4</title>
+    <link rel="stylesheet" href="css/common.css" />
+</head>
+
+<body>
+    <p><a href="index.html">Go back</a></p>
+
+    <div id="counter">
+        <button type="button" data-action="decrement">-1</button>
+        <span id="value">0</span>
+        <button type="button" data-action="increment">+1</button>
+    </div>
+
+    <script>
+        // Declaram variabila counterValue pentru a stoca valoarea curenta a contorului
+        let counterValue = 0;
+
+        // Obținem elementul span care va afișa valoarea contorului
+        const valueSpan = document.getElementById('value');
+
+        // Obținem butoanele de incrementare și decrementare
+        const incrementButton = document.querySelector('button[data-action="increment"]');
+        const decrementButton = document.querySelector('button[data-action="decrement"]');
+
+        // Adăugăm event listener pentru butonul de incrementare
+        incrementButton.addEventListener('click', () => {
+            counterValue++; // Incrementăm valoarea contorului
+            updateCounter(); // Actualizăm interfața cu noua valoare a contorului
+        });
+
+        // Adăugăm event listener pentru butonul de decrementare
+        decrementButton.addEventListener('click', () => {
+            counterValue--; // Scădem valoarea contorului
+            updateCounter(); // Actualizăm interfața cu noua valoare a contorului
+        });
+
+        // Funcție pentru actualizarea interfeței cu noua valoare a contorului
+        function updateCounter() {
+            valueSpan.textContent = counterValue; // Actualizăm textul din span cu noua valoare a contorului
+        }
+    </script>
+</body>
+
+</html>
