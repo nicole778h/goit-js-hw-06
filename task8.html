@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Task 8</title>
+    <link rel="stylesheet" href="css/common.css" />
+    <style>
+        .login-form {
+            max-width: 320px;
+            display: flex;
+            flex-direction: column;
+        }
+
+        .login-form label {
+            margin-bottom: 16px;
+        }
+
+        .login-form input,
+        .login-form button {
+            width: 100%;
+            padding: 4px;
+            font: inherit;
+        }
+    </style>
+</head>
+
+<body>
+    <p><a href="index.html">Go back</a></p>
+
+    <form class="login-form">
+        <label>
+            Email
+            <input type="email" name="email" />
+        </label>
+        <label>
+            Password
+            <input type="password" name="password" />
+        </label>
+        <button type="submit">Login</button>
+    </form>
+
+    <script>
+        // Obținem formularul de login
+        const loginForm = document.querySelector('.login-form');
+
+        // Adăugăm un ascultător de eveniment pentru evenimentul submit
+        loginForm.addEventListener('submit', function (event) {
+            // Oprim comportamentul implicit de trimitere a formularului
+            event.preventDefault();
+
+            // Obținem valorile introduse în câmpurile formularului
+            const formData = new FormData(loginForm);
+
+            // Verificăm dacă câmpurile sunt goale
+            let isEmpty = false;
+            formData.forEach(function (value) {
+                if (value.trim() === '') {
+                    isEmpty = true;
+                }
+            });
+
+            // Dacă există câmpuri goale, afișăm un mesaj de avertizare
+            if (isEmpty) {
+                alert('Toate câmpurile trebuie completate!');
+            } else {
+                // Dacă toate câmpurile sunt completate, colectăm valorile într-un obiect
+                const userData = {};
+                formData.forEach(function (value, key) {
+                    userData[key] = value;
+                });
+
+                // Afișăm obiectul cu datele introduse în consolă
+                console.log(userData);
+
+                // Resetăm valorile câmpurilor formularului
+                loginForm.reset();
+            }
+        });
+    </script>
+</body>
+
+</html>
