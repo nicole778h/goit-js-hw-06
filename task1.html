@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Count Categories and Elements</title>
+</head>
+
+<body>
+
+    <ul id="categories">
+        <li class="item">
+            <h2>Animals</h2>
+            <ul>
+                <li>Cat</li>
+                <li>Hamster</li>
+                <li>Horse</li>
+                <li>Parrot</li>
+            </ul>
+        </li>
+        <li class="item">
+            <h2>Products</h2>
+            <ul>
+                <li>Bread</li>
+                <li>Parsley</li>
+                <li>Cheese</li>
+            </ul>
+        </li>
+        <li class="item">
+            <h2>Technologies</h2>
+            <ul>
+                <li>HTML</li>
+                <li>CSS</li>
+                <li>JavaScript</li>
+                <li>React</li>
+                <li>Node.js</li>
+            </ul>
+        </li>
+    </ul>
+
+    <script>
+        document.addEventListener("DOMContentLoaded", function () {
+            // Obținem lista de categorii
+            const categoriesList = document.getElementById('categories');
+            // Obținem toate elementele li.item din lista de categorii
+            const categoryItems = categoriesList.querySelectorAll('li.item');
+
+            // Numărăm și afișăm numărul total de categorii
+            console.log('Number of categories:', categoryItems.length);
+
+            // Parcurgem fiecare element li.item pentru a afișa titlul și numărul de elemente din fiecare categorie
+            categoryItems.forEach(category => {
+                // Obținem titlul categoriei (tag-ul <h2>)
+                const categoryName = category.querySelector('h2').textContent;
+                // Obținem lista de elemente din categoria curentă (toate elementele <li> din interiorul categoriei)
+                const categoryElements = category.querySelectorAll('li');
+                // Numărăm elementele din categoria curentă
+                const numElements = categoryElements.length;
+
+                // Afișăm titlul și numărul de elemente din categoria curentă
+                console.log('Category:', categoryName);
+                console.log('Elements:', numElements);
+            });
+        });
+    </script>
+
+</body>
+
+</html>
