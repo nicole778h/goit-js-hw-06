@@ -15,23 +15,7 @@
     <input type="text" id="name-input" placeholder="Please enter your name" />
     <h1>Hello, <span id="name-output">Anonymous</span>!</h1>
 
-    <script>
-        // Obținem elementele input și span
-        const nameInput = document.getElementById('name-input');
-        const nameOutput = document.getElementById('name-output');
-
-        // Adăugăm un ascultător de eveniment pentru input-ul de nume
-        nameInput.addEventListener('input', function () {
-            // Verificăm dacă input-ul este gol
-            if (nameInput.value.trim() === '') {
-                // Dacă da, setăm textul din span la "Anonymous"
-                nameOutput.textContent = 'Anonymous';
-            } else {
-                // Dacă nu, actualizăm textul din span cu valoarea din input
-                nameOutput.textContent = nameInput.value;
-            }
-        });
-    </script>
+    <script src="js/task-05.js" type="module"></script>
 </body>
 
 </html>

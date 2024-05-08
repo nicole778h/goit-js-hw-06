@@ -27,29 +27,7 @@
 
     <input type="text" id="validation-input" data-length="6" placeholder="Please enter 6 symbols" />
 
-    <script>
-        // Obținem elementul input
-        const validationInput = document.getElementById('validation-input');
-
-        // Adăugăm un ascultător de eveniment pentru când focusul este pierdut
-        validationInput.addEventListener('blur', function () {
-            // Obținem numărul corect de caractere din atributul data-length
-            const length = parseInt(validationInput.getAttribute('data-length'));
-            // Obținem numărul de caractere introduse în input
-            const inputLength = validationInput.value.length;
-
-            // Verificăm dacă numărul de caractere este corect
-            if (inputLength === length) {
-                // Dacă da, adăugăm clasa "valid" și eliminăm clasa "invalid"
-                validationInput.classList.add('valid');
-                validationInput.classList.remove('invalid');
-            } else {
-                // Dacă nu, adăugăm clasa "invalid" și eliminăm clasa "valid"
-                validationInput.classList.add('invalid');
-                validationInput.classList.remove('valid');
-            }
-        });
-    </script>
+    <script src="js/task-06.js" type="module"></script>
 </body>
 
 </html>
